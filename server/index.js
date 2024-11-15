@@ -21,8 +21,8 @@ app.get('/', (req, res) => {
 
 app.use('/uploads', express.static('uploads'));
 
-app.use('/apis/user', userRoutes);
-app.use('/apis/car', carRoutes);
+app.use('/user', userRoutes);
+app.use('/car', carRoutes);
 // app.use('/apis/docs', swaggerUiSetup.serve, swaggerUiSetup.setup(swaggerDocs));
 connectDB()
     .then(() => {
