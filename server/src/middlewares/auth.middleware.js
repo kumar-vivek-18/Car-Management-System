@@ -8,7 +8,7 @@ export const protectRoute = async (req, res, next) => {
 
 
         const token = await req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
-        // console.log("token", token);
+        console.log("token", token);
         if (!token) return res.status(401).json({ message: "Unauthorized request" });
 
         const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
