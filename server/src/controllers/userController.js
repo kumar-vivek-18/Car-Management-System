@@ -27,7 +27,7 @@ export const createUser = async (req, res) => {
         const options = {
             httpOnly: true,
             secure: true,
-            // sameSite: "strict"
+            sameSite: "None"
         };
 
         return res.status(201).cookie("accessToken", accessToken, options).json(userWithoutPassword);
@@ -61,7 +61,7 @@ export const getUser = async (req, res) => {
         const options = {
             httpOnly: true,
             secure: true,
-            // sameSite: "strict"
+            sameSite: "None"
         };
 
         return res.status(200).cookie("accessToken", accessToken, options).json(userWithoutPassword);
